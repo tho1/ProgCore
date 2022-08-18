@@ -7,12 +7,9 @@
 //   HelloWorldWeb
 //
 
-using System.Threading.Tasks;
 using Ch01.HelloWorldWeb;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 
 namespace HelloWorldWeb
 {
