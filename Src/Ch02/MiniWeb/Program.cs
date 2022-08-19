@@ -7,8 +7,6 @@
 //   MiniWeb
 //
 
-using System.IO;
-using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
 namespace Ch02.MiniWeb

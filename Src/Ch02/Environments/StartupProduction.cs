@@ -15,7 +15,7 @@ namespace Ch02.Environments
 {
     public class StartupProduction
     {
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.Run(async (context) =>
             {

@@ -17,7 +17,7 @@ namespace Ch02.Environments
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env, ILoggerFactory factory)
+        public Startup(IWebHostEnvironment env, ILoggerFactory factory)
         {
             // Use them if required
         }
@@ -29,9 +29,9 @@ namespace Ch02.Environments
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsProduction())
+            if (env.EnvironmentName == "Production")
             {
                 app.UseExceptionHandler("/app/error");
             }
@@ -53,7 +53,7 @@ namespace Ch02.Environments
         }
 
         // (DEVELOPMENT mode)
-        public void ConfigureDevelopment(IApplicationBuilder app, IHostingEnvironment env)
+        public void ConfigureDevelopment(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.Run(async (context) =>
             {
@@ -65,7 +65,7 @@ namespace Ch02.Environments
             });
         }
         // (PRODUCTION mode)
-        public void ConfigureProduction(IApplicationBuilder app, IHostingEnvironment env)
+        public void ConfigureProduction(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.Run(async (context) =>
             {
@@ -77,7 +77,7 @@ namespace Ch02.Environments
             });
         }
         // (WHATEVER mode)
-        public void ConfigureWhatever(IApplicationBuilder app, IHostingEnvironment env)
+        public void ConfigureWhatever(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.Run(async (context) =>
             {

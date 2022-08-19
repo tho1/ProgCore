@@ -26,13 +26,22 @@ namespace Ch02.MiniWeb
         {
             // Pass your own instance
             services.AddSingleton<ICountryRepository>(new CountryRepository());
-
+            
             // Or, in alternative, let the system create one
             //services.AddSingleton<ICountryRepository, CountryRepository>();
+
+
+            //AddTransient, an AddScoped is the DI created objects
+            //AddTransient: every caller received a freshly created instance
+            //AddScopeed: receive the same instance within the same scope.
+            
+            //other DI framework
+            //Unity, AutoFac, Ninject, StructureMap
+
         }
 
         public void Configure(IApplicationBuilder app,
-            IHostingEnvironment env/*, ICountryRepository country*/, 
+            IWebHostEnvironment env/*, ICountryRepository country*/, 
             IServiceProvider provider)
         {
             app.Map("/country", countryApp =>
